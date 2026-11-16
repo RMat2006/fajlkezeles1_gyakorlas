@@ -2,3 +2,21 @@ GET http://127.0.0.1:3000/api/beolvas
 
 ###
 
+GET http://127.0.0.1:3000/api/osszeg
+
+###
+
+GET http://127.0.0.1:3000/api/szorzat
+
+###
+
+GET http://127.0.0.1:3000/api/atlag
+
+###
+GET http://127.0.0.1:3000/api/min
+
+###
+GET http://127.0.0.1:3000/api/max
+
+###
+GET http://127.0.0.1:3000/api/rendezes
