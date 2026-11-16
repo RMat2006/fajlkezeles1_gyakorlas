@@ -40,8 +40,36 @@ const writeTextFile = async (filePath, content)=>{
     }
 };
 
+//*File beolvasás
+const ReadTextFile = async (filepath)=>{
+    try{
+        const text = await fs.readFile(filepath, 'utf8');
+        return text;
+
+    }catch(error){
+        throw new Error("Olvasási hiba: ", error.message);
+    }
+};
+
 //!Endpoints:
 //?GET /api/test
+
+//*Beolvasás
+router.get('/beolvas', async (request,response)=>{
+    try{
+        const utvonal = path.join(__dirname, '../files/szamok.txt');
+        const content = await ReadTextFile(utvonal);
+
+        response.status(200).json({
+            sucess:true,
+            content: content
+        });
+    }catch(error){
+        response.status(!200).json({
+            success:false
+        });
+    }
+});
 
 //*2.feladat
 let szamok = [];
